@@ -1,5 +1,5 @@
-import numpy as np
-
+# import numpy as np
+import cupy as np
 
 def gelu(x):
     return 0.5 * x * (1 + np.tanh(np.sqrt(2 / np.pi) * (x + 0.044715 * x**3)))
@@ -108,6 +108,8 @@ def main(prompt: str, n_tokens_to_generate: int = 40, model_size: str = "124M", 
 
     # generate output ids
     output_ids = generate(input_ids, params, hparams["n_head"], n_tokens_to_generate)
+    # Convert output_ids to Python scalar
+    output_ids = [el.item() for el in output_ids]
 
     # decode the ids back into a string
     output_text = encoder.decode(output_ids)
