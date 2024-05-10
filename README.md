@@ -2,7 +2,7 @@
 
 Bind mount this folder to folder **/app** in a container based on Docker image _cupy/cupy:latest_.
 Add Python extension to VS code in container.
-Install requirements.txt packaegs in container.
+Install requirements.txt packages in container.
 
 # PicoGPT
 Accompanying blog post: [GPT in 60 Lines of Numpy](https://jaykmody.com/blog/gpt-from-scratch/)
